@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar><ion-title>Meus Contatos</ion-title></ion-toolbar>
+  <ion-toolbar><ion-title style="text-align: center;">Meus Contatos</ion-title></ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-button routerLink="/adicionar-contato" expand="block" size="large">
+  <ion-button routerLink="/adicionar-contato" expand="block" color="success" class="botao">
     Adicionar contato
   </ion-button>
 
@@ -16,11 +16,9 @@
 
   <ion-list>
     <ion-item *ngFor="let contato of listaFirebase">
-      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
       <ion-label><h2>{{ contato.nome }}</h2><p>{{ contato.email }}</p></ion-label>
-      
       <ion-buttons slot="end">
-        <ion-button color="tertiary" (click)="editar(contato)">
+        <ion-button color="success" (click)="editar(contato)">
           <ion-icon slot="icon-only" name="create-outline"></ion-icon>
         </ion-button>
         <ion-button color="danger" (click)="deletar(contato.id)">

@@ -47,9 +47,10 @@ export class ListarContatosPage implements OnInit {
         { name: 'email', value: contato.email, placeholder: 'Email' }
       ],
       buttons: [
-        { text: 'Cancelar', role: 'cancel' },
+        { text: 'Cancelar', role: 'cancel', cssClass: 'btn-cancelar' },
         { 
-          text: 'Salvar', 
+          text: 'Salvar',
+          cssClass: 'btn-salvar', 
           handler: (dados) => this.firebaseService.updateContato(contato.id, dados) 
         }
       ]
